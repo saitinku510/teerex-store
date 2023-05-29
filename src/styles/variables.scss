@@ -1,0 +1,28 @@
+$color-white-0: #ffffff;
+
+$color-black-0: #000000;
+
+$color-grey-0: #f0efef;
+$color-grey-1: #d2d2d1;
+$color-grey-2: #969192;
+
+@mixin d-flex($jc: flex-start) {
+  display: flex;
+  align-items: center;
+  justify-content: $jc;
+}
+
+@mixin font-regular($font-size: 1.6rem) {
+  font-size: $font-size;
+  font-weight: 400;
+}
+
+@mixin font-medium($font-size: 1.6rem) {
+  font-size: $font-size;
+  font-weight: 500;
+}
+
+@mixin font-bold($font-size: 1.6rem) {
+  font-size: $font-size;
+  font-weight: 700;
+}

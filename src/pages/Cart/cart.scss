@@ -1,0 +1,86 @@
+@import '/src/styles/variables.scss';
+
+.cart {
+  padding-top: 32px;
+  h1 {
+    @include font-regular($font-size: 2.4rem);
+    line-height: 130%;
+  }
+  h4 {
+    @include font-bold;
+    @include d-flex($jc: center);
+    gap: 32px;
+    margin: 32px 0 0 56px;
+    max-width: 500px;
+    span {
+      @include font-regular;
+    }
+  }
+  &Content {
+    margin: 64px 0 0 56px;
+    border-bottom: 1px solid $color-black-0;
+    max-width: 500px;
+    &List {
+      @include d-flex;
+      gap: 24px;
+      padding-bottom: 32px;
+    }
+    &Img {
+      width: 48px;
+      height: 48px;
+      background-color: $color-grey-1;
+    }
+    h2 {
+      @include font-bold;
+      line-height: 130%;
+      flex-grow: 1;
+      span {
+        display: block;
+        @include font-bold($font-size: 1.2rem);
+        padding-top: 4px;
+      }
+    }
+    select {
+      padding: 4px 12px;
+      background-color: $color-grey-0;
+      border: 1px solid $color-grey-1;
+      color: $color-grey-2;
+      cursor: pointer;
+      @include font-regular;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+    p {
+      @include font-regular;
+      padding: 4px 16px;
+      border: 1px solid $color-black-0;
+      border-radius: 4px;
+      width: fit-content;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: red;
+        color: $color-white-0;
+        border: 1px solid red;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    &Content {
+      margin-left: 0;
+      h2 {
+        font-size: 1.4rem;
+      }
+      &List {
+        gap: 8px;
+      }
+      select {
+        padding: 4px 6px;
+      }
+      p {
+        padding: 4px 6px;
+      }
+    }
+  }
+}

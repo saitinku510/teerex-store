@@ -1,0 +1,168 @@
+@import '/src/styles/variables.scss';
+
+.product {
+  padding-top: 32px;
+  &Content {
+    @include d-flex($jc: space-between);
+    width: 100%;
+    position: relative;
+  }
+  &Filters {
+    padding: 24px;
+    background-color: $color-white-0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    flex-basis: 20%;
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+    max-height: 600px;
+    overflow-y: overlay;
+    h3 {
+      @include font-bold($font-size: 2rem);
+      line-height: 130%;
+      padding-bottom: 12px;
+    }
+    li {
+      @include d-flex;
+      gap: 12px;
+      padding-left: 6px;
+      label {
+        @include font-medium;
+        cursor: pointer;
+      }
+      &:not(:last-child) {
+        padding-bottom: 8px;
+      }
+      input {
+        padding: 4px;
+        border-radius: 0;
+        background-color: $color-grey-1;
+      }
+    }
+  }
+  &Container {
+    width: 100%;
+    flex-basis: 75%;
+  }
+  &Cards {
+    padding-top: 24px;
+    @include d-flex($jc: space-between);
+    flex-wrap: wrap;
+    gap: 80px 12px;
+    max-height: calc(100vh - 200px);
+    overflow-y: overlay;
+  }
+  &Card {
+    padding: 8px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    flex-basis: 30%;
+    &Img {
+      width: 100%;
+      position: relative;
+      min-height: 150px;
+      background-color: $color-grey-1;
+      border-radius: 2px;
+      overflow: hidden;
+      img {
+        padding: 28px 8px 8px;
+      }
+      h2 {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        @include font-bold($font-size: 1.4rem);
+      }
+    }
+    &Details {
+      @include d-flex($jc: space-between);
+      padding-top: 8px;
+      h4 {
+        @include font-bold($font-size: 1.4rem);
+        text-align: center;
+        flex-grow: 1;
+      }
+      &Increment {
+        @include font-regular($font-size: 1.4rem);
+        padding: 4px 8px;
+        background-color: $color-black-0;
+        color: $color-white-0;
+        button {
+          padding: 0 10px;
+          border: none;
+          background-color: $color-black-0;
+          color: $color-white-0;
+          cursor: pointer;
+        }
+      }
+      p {
+        @include font-regular($font-size: 1.4rem);
+        padding: 4px 8px;
+        background-color: $color-black-0;
+        color: $color-white-0;
+        cursor: pointer;
+      }
+    }
+  }
+  &Search {
+    @include d-flex($jc: center);
+    gap: 12px;
+    margin-bottom: 8px;
+    input {
+      max-width: 500px;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid $color-grey-1;
+      padding-bottom: 12px;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+    .svgWrapper {
+      padding: 8px 12px;
+      background-color: $color-grey-2;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    svg {
+      display: block;
+      path {
+        fill: $color-white-0;
+      }
+    }
+    .filter {
+      display: none;
+    }
+  }
+  .dummy {
+    flex-basis: 30%;
+  }
+  @media (max-width: 768px) {
+    &Filters {
+      position: absolute;
+      right: 0;
+      top: 42px;
+      z-index: 1;
+      display: none;
+    }
+    &Container {
+      flex-basis: 100%;
+    }
+    &Search {
+      input {
+        max-width: 100%;
+      }
+      .svgWrapper {
+        background-color: $color-black-0;
+      }
+      .filter {
+        display: block;
+      }
+    }
+    &Cards {
+      gap: 24px 12px;
+    }
+    &Card {
+      flex-basis: auto;
+    }
+  }
+}

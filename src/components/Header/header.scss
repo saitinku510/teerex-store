@@ -1,0 +1,61 @@
+@import '/src/styles/variables.scss';
+
+.header {
+  padding: 8px 0;
+  background-color: $color-grey-0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  .container {
+    @include d-flex($jc: space-between);
+  }
+  h2 {
+    @include font-medium($font-size: 2.4rem);
+    line-height: 130%;
+  }
+  &Links {
+    @include d-flex;
+    gap: 24px;
+    a {
+      @include font-regular($font-size: 2rem);
+      line-height: 130%;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      &:first-child {
+        @media (max-width: 768px) {
+          display: none;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          transition: all 0.3s ease-in-out;
+          width: 0;
+          background-color: $color-black-0;
+          height: 1px;
+        }
+      }
+      &:last-child {
+        padding: 12px 16px;
+        border-radius: 4px;
+        &:hover {
+          background-color: $color-grey-1;
+        }
+      }
+      span {
+        position: absolute;
+        top: 0;
+        right: 8px;
+        @include font-bold($font-size: 1rem);
+      }
+      svg {
+        display: block;
+      }
+    }
+  }
+}
